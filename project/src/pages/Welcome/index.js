@@ -28,7 +28,7 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#003580'
+    backgroundColor: '#c7cad2'
   },
   containerLogo:{
     flex: 2,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   button:{
     position: 'absolute',
-    backgroundColor: '#003580',
+    backgroundColor: '#2d939c',
     borderRadius: 50,
     paddingVertical: 8,
     width: '60%',

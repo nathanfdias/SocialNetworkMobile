@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView
 } from "react-native";
 
 import * as Animatable from "react-native-animatable";
@@ -15,29 +16,35 @@ export default function SignIn() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Animatable.View
         animation="fadeInLeft"
         delay={500}
         style={styles.containerHeader}
       >
-        <Text style={styles.message}>Bem vindo(a)</Text>
+        <Text style={styles.message}>Cadastro</Text>
       </Animatable.View>
       <Animatable.View animation="fadeInUp" style={styles.containerForm}>
+        <Text style={styles.title}>Nome</Text>
+        <TextInput placeholder="Digite seu nome" style={styles.input} />
         <Text style={styles.title}>Email</Text>
-        <TextInput placeholder="Digite um email" style={styles.input} />
+        <TextInput placeholder="Digite seu email" style={styles.input} />
         <Text style={styles.title}>Senha</Text>
-        <TextInput placeholder="Sua senha" style={styles.input} />
+        <TextInput placeholder="Digite sua senha" style={styles.input} />
+        <Text style={styles.title}>CPF</Text>
+        <TextInput placeholder="Digite seu cpf" style={styles.input} />
+        <Text style={styles.title}>Apelido</Text>
+        <TextInput placeholder="Digite seu apelido" style={styles.input} />
+        <Text style={styles.title}>Time</Text>
+        <TextInput placeholder="Digite seu time" style={styles.input} />
         <TouchableOpacity style={styles.button} >
-          <Text style={styles.buttonText}>Acessar</Text>
+          <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('/Cadastro')}>
-          <Text style={styles.registerText} >
-            Não possui uma conta? Cadastre-se
-          </Text>
+        <TouchableOpacity style={[styles.button, {marginBottom: 20}]} onPress={() => navigation.navigate("/Login")}>
+          <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
       </Animatable.View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -87,12 +94,5 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  buttonRegister: {
-    marginTop: 14,
-    alignSelf: 'center'
-  },
-  registerText:{
-    color: "#a1a1a1",
   }
 });
